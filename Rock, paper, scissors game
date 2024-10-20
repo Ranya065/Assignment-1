@@ -1,0 +1,32 @@
+public class game
+{
+    public static void main(String[] args) 
+    {
+        String[] options = {"rock", "paper", "scissors"};
+        String userMove = "rock";  
+        String computerMove = " scissors ";
+        System.out.println ("your option:(rock, paper, scissors) ");
+        System.out.println("You chose: " + userMove);
+        System.out.println("Computer chose: " + computerMove);
+        String result = getResult(userMove, computerMove);
+        System.out.println(result);
+    }
+    public static String getComputerMove(String[] options)
+    {
+        return options[(int) (System.currentTimeMillis() % 3)];
+    }
+    public static String getResult(String userMove, String computerMove)
+    {
+        if (userMove.equals(computerMove))
+        {
+            return "It's a tie!";
+        }
+        if ((userMove.equals("rock") && computerMove.equals("scissors")) ||
+            (userMove.equals("paper") && computerMove.equals("rock")) ||
+            (userMove.equals("scissors") && computerMove.equals("paper"))) 
+            {
+            return "You win!";
+        }
+        return "Computer wins!";
+    }
+}
