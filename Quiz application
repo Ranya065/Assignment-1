@@ -1,0 +1,33 @@
+class QuizApplication 
+{
+    public static void main(String[] args)
+    {
+        String[] questions = {
+            "1.which is Indian National flower?",
+            "2. What is the result of 3 + 5?",
+            "3. which  is indian national game? "
+        };
+        String[][] options = {
+            {"A. Lotus", "B. alli", "C. rose", "D. redrose"},
+            {"A. 5", "B. 8", "C. 10", "D. 15"},
+            {"A. hackey", "B. kapadi", "C. cricket", "D. valley ball"}
+        };
+        char[] answers = {'A', 'B', 'A'};
+        int score = 0;
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            for (int j = 0; j < options[i].length; j++) 
+            {
+                System.out.println(options[i][j]);
+            }
+            System.out.println("Enter your answer (A, B, C, or D):");
+            char answer = ' '; 
+            answer = 'A'; 
+            if (answer == answers[i]) 
+            {
+                score++;
+            }
+        }
+        System.out.println("Your final score is: " + score + "/" + questions.length);
+    }
+}
